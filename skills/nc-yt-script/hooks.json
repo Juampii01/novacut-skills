@@ -45,7 +45,9 @@
     "\\b(probablemente |seguramente |todav[ií]a )?(est[áa]s|segu[ií]s|sigues) (haciendo|cometiendo|subiendo|usando|grabando)\\b",
     "\\bel (error|motivo|problema) (que|de|por el que)\\b",
     "\\b(dej[áa]|deja|par[áa]) de\\b",
-    "\\b(lo )?est[áa]s haciendo mal\\b"
+    "\\b(lo )?est[áa]s haciendo mal\\b",
+    "\\b(la|el) (raz[óo]n|motivo) por (la|el) que (nadie|no)\\b",
+    "\\btus? \\w+( \\w+)? (son|es) (la raz[óo]n|el motivo|el problema)\\b"
    ]
   },
   {
@@ -83,7 +85,8 @@
    "match": [
     "\\b(el|la|lo) (mejor|peor|m[áa]s (r[áa]pid[oa]|f[áa]cil|barat[oa]|simple|corto|corta))\\b",
     "\\b(el|la) [úu]nic[oa]\\b",
-    "\\bn[úu]mero uno\\b"
+    "\\bn[úu]mero uno\\b",
+    "\\b(forma|manera|camino|truco|m[ée]todo) m[áa]s (r[áa]pid[oa]|f[áa]cil|barat[oa]|simple|cort[oa]|segur[oa])\\b"
    ]
   },
   {
@@ -157,7 +160,9 @@
     "\\w+ \\+ \\w+",
     "\\bcombin\\w*",
     "\\bjunt(os|as|ando|ás|ar)\\b",
-    "\\bmezcl\\w*"
+    "\\bmezcl\\w*",
+    "(?-i:\\b[A-Z]\\w+) m[áa]s (el|la|los|las|tu|tus|un|una)\\b",
+    "\\b(claude|chatgpt|gemini|canva|capcut|notion|excel|sheets|zapier|n8n|whatsapp|premiere|davinci|youtube studio)\\b.*\\b(claude|chatgpt|gemini|canva|capcut|notion|excel|sheets|zapier|n8n|whatsapp|premiere|davinci|youtube studio)\\b"
    ]
   },
   {
@@ -197,7 +202,8 @@
     "\\bcaptura( de pantalla)?\\b",
     "\\b(la )?prueba\\b",
     "\\bcomprobantes?\\b",
-    "\\bmir[áa] (esto|este|esta)\\b"
+    "\\bmir[áa] (esto|este|esta)\\b",
+    "\\b(esta|este) es (la|el|mi) (p[áa]gina|panel|informe|reporte|captura|resultado|factura|transferencia)\\b"
    ]
   },
   {
@@ -246,7 +252,8 @@
    "match": [
     "\\btodos los (videos|posteos|guiones)\\b.*\\b(empiezan|arrancan|nacen|salen)\\b",
     "\\btodo (empez[óo]|arranc[óo]|empieza|arranca)\\b",
-    "\\b(el|la) (verdader[oa] )?(motivo|origen|raz[óo]n)\\b"
+    "\\b(el|la) (verdader[oa] )?(motivo|origen|raz[óo]n)\\b",
+    "\\b(el )?mismo (archivo|documento|prompt|cuaderno|lugar|guion)\\b"
    ]
   },
   {
@@ -260,7 +267,9 @@
     "\\b(este|el pr[óo]ximo) (mes|año)\\b",
     "\\b(est[áa] cambiando|va a cambiar|cambi[óo])\\b",
     "\\bya no\\b",
-    "\\ba partir de\\b"
+    "\\ba partir de\\b",
+    "\\bdeja(n)? de (importar|funcionar|servir|existir|contar)\\b",
+    "\\b(lo|la|los|las) reemplaza\\b"
    ]
   },
   {
@@ -272,7 +281,8 @@
    "match": [
     "^si (vos |t[úu] )?(ten[eé]s|tienes|sos|eres|est[áa]s|hac[eé]s|haces|vend[eé]s|vendes|quer[eé]s|quieres|trabaj[áa]s|trabajas|sub[ií]s|subes|grab[áa]s|grabas)\\b",
     "\\bpara (cualquiera|todos los|todas las|la gente|quien|quienes) que\\b",
-    "\\b(esto es )?para (vos|ti)\\b"
+    "\\b(esto es )?para (vos|ti)\\b",
+    "^si\\b[^.]*\\b(suscriptores|seguidores|clientes|alumnos|videos|vistas|años)\\b"
    ]
   }
  ]
