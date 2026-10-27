@@ -13,4 +13,6 @@ Parte de las skills de este pack están **basadas en el trabajo de Jake Schincar
 
 Los textos completos de esas licencias están en la carpeta `licencias/` y viajan con cada copia del pack, como pide la licencia MIT.
 
-Las skills `nc-inicio`, `nc-voz` y `nc-brief-edicion`, la guía de instalación, los tutoriales y las adaptaciones al español son de NovaCut.
+La fuente **Montserrat** que usan los subtítulos (`skills/nc-subtitulos/fuentes/`) es de Julieta Ulanovsky y colaboradores, con licencia SIL Open Font License 1.1 (el texto viaja en `OFL-Montserrat.txt`).
+
+Las skills `nc-inicio`, `nc-voz`, `nc-brief-edicion`, `nc-editar`, `nc-cortar`, `nc-subtitulos` y `nc-audio`, la guía de instalación, los tutoriales y las adaptaciones al español son de NovaCut.

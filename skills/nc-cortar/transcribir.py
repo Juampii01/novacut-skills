@@ -91,7 +91,8 @@ def cargar_modelo(nombre: str, carpeta: str | None):
     except ImportError:
         error(
             "Falta faster-whisper. Instalalo con:\n"
-            "  Mac:     python3 -m pip install faster-whisper\n"
+            "  Mac:     python3.12 -m venv ~/.claude/novacut/venv && ~/.claude/novacut/venv/bin/python -m pip install faster-whisper\n"
+            "           (y corré este script con ~/.claude/novacut/venv/bin/python)\n"
             "  Windows: py -m pip install faster-whisper"
         )
     hilos = max(1, os.cpu_count() or 1)

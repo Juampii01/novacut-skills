@@ -8,6 +8,7 @@ Hay dos formas. Elegí una según cómo usás Claude:
 | Dificultad | Fácil: subís archivos desde la configuración | Media: se usa la terminal una vez |
 | Qué instalás | Las skills que elijas, una por una | Todas de una vez |
 | Herramientas que corren (puntaje de ganchos, humanizador, tiempos) | Sí, en el entorno de Claude | Sí, en tu computadora |
+| Edición de video (cortes, audio, subtítulos) | No | Sí |
 
 Si nunca abriste una terminal, andá por el **Camino A**.
 
@@ -64,12 +65,13 @@ irm https://claude.ai/install.ps1 | iex
 
 Cerrá y volvé a abrir la terminal, y verificá con `claude --version`. Después escribí `claude` e iniciá sesión con tu cuenta (Pro o superior). Si preferís no usar la terminal, Claude Code también viene en la app de escritorio de Claude.
 
-**2. Verificá que tenés Python 3** (las herramientas del pack lo usan):
-```bash
-python3 --version
-```
-- Mac: si no lo tenés, el sistema te ofrece instalarlo al correr ese comando; aceptá.
-- Windows: instalalo desde python.org o desde la Microsoft Store, y marcá la opción **"Add Python to PATH"**. En Windows el comando puede ser `python` en vez de `python3`.
+**2. Instalá las herramientas de video** (solo si vas a usar la edición: `nc-editar`, `nc-cortar`, `nc-subtitulos`, `nc-audio`).
+
+El editor necesita **ffmpeg**, **Python 3.10 o más nuevo** y **faster-whisper** (la transcripción local, gratis). La primera vez descarga el modelo de voz (unos 480 MB) y después funciona sin internet. Los pasos exactos para Mac y Windows están en `skills/nc-editar/instalar_dependencias.md`.
+
+Atajo: después del paso 3, abrí Claude Code y escribí *"instalame las dependencias del editor"*. Te guía y te pide permiso antes de cada comando.
+
+Si solo vas a usar las skills de escritura, alcanza con tener Python 3 (`python3 --version`; en Windows puede ser `python`).
 
 **3. Copiá las skills.** Descomprimí `NovaCut-Skills.zip`, abrí la terminal en la carpeta `NovaCut-Skills` y corré:
 
@@ -89,7 +91,10 @@ Copy-Item templates\voz.md "$env:USERPROFILE\.claude\novacut\voz.md"
 
 **Atajo:** también podés abrir Claude Code dentro de la carpeta del pack y escribir: *"Instalá todas las skills de la carpeta skills en mi carpeta personal de skills y copiá templates/voz.md a ~/.claude/novacut/voz.md."*
 
-**4. Probala.** Abrí Claude Code (`claude`) y escribí `/nc-inicio`. Te muestra el menú del pack. Después corré `/nc-voz` para armar tu perfil.
+**4. Probala.** Abrí Claude Code (`claude`) y escribí `/nc-inicio`. Te muestra el menú del pack. Después corré `/nc-voz` para armar tu perfil. Para la edición, verificá todo con:
+```bash
+python3 ~/.claude/skills/nc-editar/verificar.py
+```
 
 ---
 
