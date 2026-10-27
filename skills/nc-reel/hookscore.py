@@ -87,7 +87,7 @@ STAKES = {
     "peligro", "cuidado", "ojo", "arrepiento", "arrepenti", "ojala", "deberias",
     "deberia", "todavia", "solo", "unico", "unica", "versus", "vs", "basta",
     "nunca", "dejo", "deje", "pare", "para", "culpa", "miedo", "vergüenza",
-    "verguenza", "fallo", "rechazo", "rechazaron",
+    "verguenza", "fallo", "rechazo", "rechazaron", "ya", "apenas", "recien",
 }
 # "para" es preposición casi siempre; se saca acá y queda "pará" (imperativo)
 # que se detecta antes de quitar tildes.
