@@ -1,0 +1,181 @@
+{
+  "version": "nc-1.0",
+  "note": "21 fórmulas de gancho para LinkedIn, en español. La línea 1 de un post de LinkedIn es todo el juego: el feed corta en más o menos 210 caracteres en computadora y 140 en el celular antes de \"ver más\" (valores de 2026, pueden cambiar), así que el gancho tiene que sobrevivir solo. Cada fórmula trae plantilla, ejemplo, para qué sirve y cómo se arruina. Son heurísticas de escritura, no predicen qué post va a funcionar: eso te lo dicen tus propios números (/nc-li-audit).",
+  "rules": [
+    "Una idea por gancho. Si necesita dos frases pegadas con coma, son dos posts.",
+    "La línea 2 no es otro gancho: es lo que paga la línea 1. Nunca la gastes en preparar.",
+    "Nada de signos de pregunta en la línea 1, salvo que la pregunta sea tan concreta que solo vos podrías hacerla.",
+    "Los números le ganan a los adjetivos. \"USD 4.200\" le gana a \"un montón de plata\" siempre.",
+    "Si el gancho funciona con el nombre de otra persona, no es tu gancho."
+  ],
+  "hooks": [
+    {
+      "id": 1,
+      "name": "Contra la corriente",
+      "template": "Todos dicen {consejo común}. Después de {experiencia concreta}, creo que está mal.",
+      "example": "Todos dicen que hay que publicar todos los días. Publiqué 4 veces por semana durante un año y le gané a cada perfil diario de mi rubro.",
+      "best_for": "Instalar un punto de vista. La fórmula con más comentarios de las 21.",
+      "trap": "Ir contra algo que nadie cree. La creencia tiene que ser común de verdad."
+    },
+    {
+      "id": 2,
+      "name": "El número revelado",
+      "template": "Hice {tal cosa} durante {N} {días/semanas}. Esto es lo que pasó de verdad.",
+      "example": "Mandé 400 mensajes en frío en 30 días. Respondieron 11. Dos se convirtieron en clientes.",
+      "best_for": "Experimentos, desafíos, cualquier cosa con un resultado que se pueda contar.",
+      "trap": "Enterrar el número. Va en la línea 1 o la fórmula no hace nada."
+    },
+    {
+      "id": 3,
+      "name": "La confesión del error",
+      "template": "{Costo concreto} es lo que me costó {un error}.",
+      "example": "USD 4.000 es lo que me costó no firmar contrato con un cliente en marzo.",
+      "best_for": "Confianza. La gente reenvía los posts donde quedás mal.",
+      "trap": "Un error falso-humilde. \"Me comprometo demasiado\" se lee como alarde y mata el post."
+    },
+    {
+      "id": 4,
+      "name": "Antes / después",
+      "template": "Hace {tiempo} {estado bajo}. Hoy {estado alto}. La diferencia fue {una cosa}.",
+      "example": "Hace 18 meses armaba presupuestos a las 2 de la mañana. Hoy los mando en 6 minutos. Lo hizo una plantilla.",
+      "best_for": "Probar que recorriste el camino que tu lector quiere recorrer.",
+      "trap": "Transformaciones de tres partes. Nombrá una palanca o el lector deja de creerte."
+    },
+    {
+      "id": 5,
+      "name": "La lista prometida",
+      "template": "{N} cosas que me hubiera gustado saber antes de {hito}.",
+      "example": "7 cosas que me hubiera gustado saber antes de contratar a mi primer empleado.",
+      "best_for": "Guardados. La fórmula que más se guarda, y LinkedIn pesa mucho el guardado.",
+      "trap": "N mayor a 10. El lector no cree que tengas 15 buenas, y no las tenés."
+    },
+    {
+      "id": 6,
+      "name": "El secreto de adentro",
+      "template": "Después de {N} años {haciendo tal cosa}, esta es la parte que nadie pone en {la búsqueda laboral / el curso / la propuesta}.",
+      "example": "Después de 9 años vendiendo servicios contables a pymes, esta es la parte que nadie pone en la propuesta.",
+      "best_for": "Opiniones con credencial. Funciona solo si los años son reales.",
+      "trap": "Prometer un secreto y entregar algo que todos saben. Los comentarios te lo van a decir."
+    },
+    {
+      "id": 7,
+      "name": "El llamado de atención",
+      "template": "Si todavía {hacés algo desactualizado}, pará.",
+      "example": "Si todavía mandás presupuestos en Word por mail, pará.",
+      "best_for": "Posts cortos con una sola instrucción. La más rápida de escribir de las 21.",
+      "trap": "Señalar algo que nadie hace. O peor, señalar a tu propia audiencia con desprecio."
+    },
+    {
+      "id": 8,
+      "name": "La pregunta trampa",
+      "template": "{Escenario concreto con un costo real}. ¿Qué hacés?",
+      "example": "Tu mejor cliente te pide un 40% de descuento y te da a entender que se va si no se lo das. ¿Qué hacés?",
+      "best_for": "Volumen de comentarios. La gente responde escenarios; a \"¿qué opinan?\" lo ignora.",
+      "trap": "Una pregunta con una respuesta obvia. Tiene que haber una bifurcación real."
+    },
+    {
+      "id": 9,
+      "name": "Arranque en frío",
+      "template": "\"{Línea de diálogo}\"\n\n{Quién la dijo, cuándo y por qué importó}.",
+      "example": "\"Nos vamos con alguien más barato.\"\n\nEse mail llegó 40 minutos después de que mandé la mejor propuesta del año.",
+      "best_for": "Posts de historia largos. El mayor tiempo de lectura.",
+      "trap": "Diálogo que nadie diría. Usá la línea real, con las partes feas incluidas."
+    },
+    {
+      "id": 10,
+      "name": "El comprobante",
+      "template": "{Captura o número duro}. {Una frase de contexto}.",
+      "example": "3 clientes, 11 días, cero llamadas agendadas. Esta es la secuencia exacta.",
+      "best_for": "Todo lo que puedas probar. Con una imagen, el alcance suele crecer.",
+      "trap": "Un comprobante sin historia. El número abre la puerta; la historia es la habitación."
+    },
+    {
+      "id": 11,
+      "name": "El mito derribado",
+      "template": "{Explicación popular} no es la razón por la que {te pasa algo malo}.",
+      "example": "El algoritmo no es la razón por la que tus posts no despegan.",
+      "best_for": "Reencuadrar. Te deja dar la causa real en la línea 3.",
+      "trap": "Derribar el mito y nunca nombrar el reemplazo. Nombralo siempre."
+    },
+    {
+      "id": 12,
+      "name": "La comparación",
+      "template": "{Opción cara} vs {opción barata}. {Veredicto sorprendente}.",
+      "example": "Una agencia de branding de USD 6.000 vs una herramienta de USD 20 y un fin de semana. Ganó el fin de semana.",
+      "best_for": "Posts de herramientas y procesos. Se comparten mucho.",
+      "trap": "Una comparación injusta. Reconocé lo que la opción cara hace mejor de verdad."
+    },
+    {
+      "id": 13,
+      "name": "El permiso",
+      "template": "Tenés permiso para {algo por lo que el lector se siente culpable}.",
+      "example": "Tenés permiso para rechazar un trabajo que paga bien y te tiene amargado.",
+      "best_for": "Alcance fuera de tu nicho. Viajan más que los posts tácticos.",
+      "trap": "Autocuidado genérico. Tiene que ser específico de la vida laboral de tu lector."
+    },
+    {
+      "id": 14,
+      "name": "El corte en seco",
+      "template": "{Una palabra o una línea de tres palabras, punto.}",
+      "example": "Me echaron.",
+      "best_for": "Frenar el scroll en seco. El espacio en blanco hace el trabajo.",
+      "trap": "Abusar. Una vez por mes. Si todos tus posts arrancan así, es un tic."
+    },
+    {
+      "id": 15,
+      "name": "La advertencia",
+      "template": "{Práctica común} te está costando {algo concreto que le importa} sin que lo notes.",
+      "example": "Tu \"llamadita rápida para alinear\" te está costando seis horas por semana sin que lo notes.",
+      "best_for": "Audiencias que tienen el problema pero no conectaron causa y costo.",
+      "trap": "Miedo sin salida. Dá la solución en el mismo post o solo dejaste a alguien ansioso."
+    },
+    {
+      "id": 16,
+      "name": "Bueno vs excelente",
+      "template": "Un buen {rol} {hace X}. Un excelente {rol} {hace Y}.",
+      "example": "Un buen vendedor responde la pregunta. Un excelente vendedor pregunta por qué se la hicieron.",
+      "best_for": "Frases citables. Imán de capturas.",
+      "trap": "Una distinción que en realidad es \"esforzate más\". Y tiene que ser otra acción, no más esfuerzo."
+    },
+    {
+      "id": 17,
+      "name": "El ancla de tiempo",
+      "template": "{Tarea} me llevaba {mucho tiempo}. Ahora me lleva {poco tiempo}.",
+      "example": "Escribir los posts de la semana me llevaba 5 horas. Ahora me lleva 20 minutos.",
+      "best_for": "Posts de herramientas, sistemas y automatización. La forma más fuerte para un paso a paso.",
+      "trap": "Una proporción increíble. De 5 horas a 20 minutos se cree. De 5 horas a 8 segundos, no."
+    },
+    {
+      "id": 18,
+      "name": "La regla impopular",
+      "template": "No {práctica muy aceptada}. Nunca. Te explico por qué.",
+      "example": "No hago llamadas de diagnóstico. Nunca.",
+      "best_for": "Posicionamiento. Atrae a los clientes correctos espantando a los incorrectos.",
+      "trap": "Una regla que rompés todo el tiempo. Alguien en los comentarios lo va a saber."
+    },
+    {
+      "id": 19,
+      "name": "El hueco de curiosidad",
+      "template": "{El/la más} {cosa} que {hice} {rompió la regla obvia}.",
+      "example": "La mejor contratación que hice reprobó la entrevista.",
+      "best_for": "Aperturas que obligan a tocar \"ver más\".",
+      "trap": "Un hueco que nunca cerrás. Resolvelo antes de la línea 4 o escribiste clickbait."
+    },
+    {
+      "id": 20,
+      "name": "El portazo",
+      "template": "{Despedí/renuncié/borré/cancelé} {algo valioso}. {Resultado}.",
+      "example": "Despedí a mi cliente que más pagaba en enero. La facturación subió 30%.",
+      "best_for": "Posts de valores con un resultado de negocio. Mucha interacción.",
+      "trap": "Irse sin costo. Nombrá lo que te costó de verdad o se lee como teatro."
+    },
+    {
+      "id": 21,
+      "name": "El valor directo",
+      "template": "Esta es la {pieza} exacta que usé para {resultado concreto}. Robala.",
+      "example": "Este es el mail de 4 líneas que usé para reabrir 3 ventas que daba por muertas. Robalo.",
+      "best_for": "Imanes de clientes y posts de \"comentá y te lo mando\". La que más convierte de las 21.",
+      "trap": "Hacer que pidan algo que podías publicar. Regalá la pieza en el post."
+    }
+  ]
+}
