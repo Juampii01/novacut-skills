@@ -1,0 +1,226 @@
+{
+  "version": "nc-1.0",
+  "note": "21 fórmulas de gancho para X, en español. En X la primera línea no es el comienzo del post: es casi todo el post. El timeline muestra un post normal entero y uno largo solo hasta \"Mostrar más\". Así que el gancho tiene que funcionar solo, leerse en lo que tarda un pulgar en decidir y ser tan concreto que nadie más podría haberlo publicado. Cada fórmula trae plantilla, ejemplo, para qué sirve, cómo se arruina y una regex `match` para nombrar también un gancho encontrado en el feed, no solo uno nuevo. Se recorren en `classify_order`, de la más específica a la más general, sin distinguir mayúsculas. Las regex son heurísticas: aceptan voseo y tuteo, con y sin tilde, pero no van a reconocer todas las formas de decir lo mismo.",
+  "rules": [
+    "La primera línea tiene que funcionar si es la única que alguien lee. En X casi siempre lo es.",
+    "Una idea. Si la línea necesita dos frases pegadas con coma, son dos posts.",
+    "Los números le ganan a los adjetivos. \"USD 4.200\" le gana a \"un montón de plata\" siempre.",
+    "Nada de etiqueta como gancho. \"Un hilo\", \"Opinión impopular\", \"Rapidito\" son envoltorio. Arrancá con lo de adentro.",
+    "Ni link, ni hashtag, ni @ en la línea 1. Un link ahí es una salida antes de que el post llegue, y un hashtag es un link para irse de tu propio post.",
+    "Si el gancho funcionaría con el nombre de otra persona, no es tu gancho."
+  ],
+  "classify_order": [
+    3,
+    7,
+    14,
+    8,
+    9,
+    6,
+    5,
+    16,
+    15,
+    2,
+    4,
+    13,
+    11,
+    10,
+    17,
+    1,
+    18,
+    19,
+    12,
+    20,
+    21
+  ],
+  "hooks": [
+    {
+      "id": 1,
+      "name": "Contra la corriente",
+      "template": "Todos dicen {consejo común}. {Experiencia concreta} dice otra cosa.",
+      "example": "Todos dicen que hay que publicar tres veces por día. Mi mejor mes acá fueron ocho posts.",
+      "best_for": "Un punto de vista. La fórmula que más respuestas genera, y las respuestas son lo que X más pesa.",
+      "trap": "Ir contra algo que nadie cree. La creencia tiene que ser común de verdad, o es un hombre de paja y las respuestas te lo van a decir.",
+      "match": "\\b(?:opini[oó]n impopular|hot take|pol[eé]mic[oa]|todo el mundo (?:dice|piensa|cree|te dice)|todos (?:dicen|piensan|creen|te dicen)|la mayor[ií]a (?:piensa|cree|dice)|(?:dej[aá]|deja|dejen) de (?:decir|repetir)|est[aá] sobrevalorad[oa]|es (?:una mentira|un mito|mentira)|est[aá] muert[oa]|nadie quiere escuchar)\\b"
+    },
+    {
+      "id": 2,
+      "name": "El número revelado",
+      "template": "{Hice tal cosa} durante {N} {días/semanas}. Esto es lo que pasó de verdad.",
+      "example": "Respondí a 30 cuentas más grandes que yo todos los días durante 60 días. Esto es lo que logró.",
+      "best_for": "Experimentos y desafíos. Cualquier cosa con un resultado que se pueda contar.",
+      "trap": "Enterrar el resultado. El número que importa va en la línea 1 o 2, no en el post 7.",
+      "match": "\\b\\w+(?:é|í|amos|imos)\\b[^.!?\\n]{0,60}?\\b(?:durante|por|en)\\s+(?:\\d+|dos|tres|cuatro|cinco|seis|siete|ocho|diez|doce|quince|veinte|treinta|sesenta|noventa|cien)\\s+(?:d[ií]as?|semanas?|mes(?:es)?|años?)\\b|\\b(?:durante|por)\\s+(?:\\d+|dos|tres|cuatro|cinco|seis|siete|ocho|diez|doce|quince|veinte|treinta|sesenta|noventa|cien)\\s+(?:d[ií]as?|semanas?|mes(?:es)?|años?)\\s+seguid[oa]s\\b"
+    },
+    {
+      "id": 3,
+      "name": "La confesión de costo",
+      "template": "{Monto concreto} es lo que me costó {un error}.",
+      "example": "USD 4.000 es lo que me costó no tener contrato con un cliente.",
+      "best_for": "Confianza, rápido. La gente comparte los posts donde quedás mal.",
+      "trap": "Un costo de mentira. \"Me costó la paz mental\" no es un número, y se nota.",
+      "match": "(?:US\\$|USD|ARS|MXN|COP|CLP|€|\\$)\\s?\\d[\\d.,]*(?:\\s?(?:k|mil|M|millones))?\\s+(?:es|fue|son|fueron) lo que\\b|\\b(?:me|nos|le|les) (?:cost[oó]|salió|sali[oó])\\b|\\bperd[ií]\\b[^.!?\\n]{0,25}(?:US\\$|USD|ARS|MXN|COP|CLP|€|\\$)\\s?\\d[\\d.,]*(?:\\s?(?:k|mil|M|millones))?|\\b\\d[\\d.,]*\\s?(?:mil )?(?:d[oó]lares|pesos|euros|lucas)\\s+(?:es|fue|son|fueron) lo que\\b"
+    },
+    {
+      "id": 4,
+      "name": "Antes / después",
+      "template": "Hace {tiempo} {estado bajo}. Hoy {estado alto}. Cambió una sola cosa.",
+      "example": "Hace un año tenía 212 seguidores. Hoy tengo 9.400. Cambié un hábito.",
+      "best_for": "Probar que recorriste la distancia que tu lector quiere recorrer.",
+      "trap": "Transformaciones de tres partes. Nombrá una palanca o nadie te cree ninguna.",
+      "match": "\\bhace (?:\\d+|un|una|dos|tres|seis|dieciocho)\\s+(?:d[ií]as?|semanas?|mes(?:es)?|años?)\\b|\\b(?:el año pasado|el año anterior)\\b[^.!?\\n]{0,60}\\b(?:hoy|ahora)\\b"
+    },
+    {
+      "id": 5,
+      "name": "La lista",
+      "template": "{N} {cosas} que {público concreto} debería {hacer/saber}:",
+      "example": "7 prompts que uso todos los días como freelancer:",
+      "best_for": "Guardados. Una lista es el post que la gente guarda para leer después, y el guardado se ve en tus estadísticas.",
+      "trap": "N mayor a 10. Nadie cree que tengas 15 buenos, y no los tenés.",
+      "match": "^\\s*(?:\\d{1,2}|tres|cuatro|cinco|seis|siete|ocho|nueve|diez)\\s+(?:\\w+\\s+){0,2}(?:cosas|herramientas|lecciones|formas|maneras|reglas|errores|prompts|ideas|h[aá]bitos|libros|se[ñn]ales|razones|preguntas|pasos|habilidades|apps|cuentas|tips|consejos|verdades|principios|personas|sitios|plantillas)\\b"
+    },
+    {
+      "id": 6,
+      "name": "Nadie te dice",
+      "template": "Nadie te dice {algo cierto, concreto y un poco incómodo}.",
+      "example": "Nadie te dice que los primeros 1.000 seguidores salen de responder, no de publicar.",
+      "best_for": "Conocimiento de adentro, de alguien que hizo la cosa.",
+      "trap": "Seguirlo con algo que todos ya dicen. Te lo van a citar en las respuestas.",
+      "match": "\\b(?:nadie|ninguno|ninguna) (?:te |les |nos |me )?(?:dice|dijo|cuenta|cont[oó]|habla de|avisa|avis[oó]|menciona|explica|explic[oó])\\b"
+    },
+    {
+      "id": 7,
+      "name": "Lo nuevo",
+      "template": "{El/la nuevo/a} {categoría conocida} es {algo inesperado}.",
+      "example": "El empleado de marketing más buscado de 2026 es un archivo de texto.",
+      "best_for": "Reencuadrar. Una frase, sin preparación, que hace ver una categoría de otra forma. La forma más reposteada en el X de IA.",
+      "trap": "Un reencuadre que no es lo bastante cierto para discutirlo. Tiene que poder defenderse, o es un eslogan.",
+      "match": "\\b(?:es|son) (?:el|la|los|las) nuev[oa]s?\\b|\\b(?:el|la) (?:nuev[oa]|pr[oó]xim[oa]) \\w+(?: \\w+){0,3} es\\b|\\bm[aá]s (?:buscad[oa]|codiciad[oa]|subestimad[oa]|valios[oa]) [^.!?\\n]{0,30}\\bes\\b"
+    },
+    {
+      "id": 8,
+      "name": "La credencial",
+      "template": "Soy {nombre} y {armé / manejo / hice tal cosa}. Este es mi setup exacto.",
+      "example": "Soy Dana y manejo una agencia de 7 cifras con 4 personas. Este es mi stack exacto.",
+      "best_for": "Cuando quién sos es la razón para leer. Solo funciona si la credencial es real y concreta.",
+      "trap": "Una credencial que no lo es. \"Soy creador y amo la IA\" no es razón para seguir leyendo.",
+      "match": "^\\s*soy\\s+[A-ZÁÉÍÓÚÑ][\\wáéíóúñ]+,?\\s+y\\s+\\w+|\\b(?:este|esta|ac[aá]|aqu[ií]) (?:es|est[aá]|va|tienen) (?:mi|el|la) (?:setup|stack|flujo|proceso|sistema|playbook|m[eé]todo)\\b|\\bte (?:muestro|comparto|paso) (?:mi|el) (?:setup|stack|flujo|proceso|sistema)\\b"
+    },
+    {
+      "id": 9,
+      "name": "El ancla de tiempo",
+      "template": "{Tarea} me llevaba {mucho tiempo}. Ahora me lleva {poco tiempo}.",
+      "example": "Un presupuesto para un cliente me llevaba 5 horas. Ahora me lleva 20 minutos.",
+      "best_for": "Posts de automatización y herramientas. La proporción convence sola.",
+      "trap": "Una proporción increíble. De 5 horas a 20 minutos se cree; de 5 horas a 5 segundos suena a aviso.",
+      "match": "\\b(?:me |nos )?(?:llevaba|llevaban|tardaba|tardaban|demoraba|tomaba)\\b[^.!?\\n]{0,40}\\b(?:horas?|d[ií]as?|semanas?|minutos?)\\b|\\bahora (?:me |nos )?(?:lleva|tarda|toma|demora|sale)\\b|\\ben (?:menos de )?\\d+\\s*(?:seg|segundos|min|minutos|horas?)\\b[^.!?\\n]{0,40}\\ben (?:vez|lugar) de\\b"
+    },
+    {
+      "id": 10,
+      "name": "El resultado de otro",
+      "template": "{Una persona concreta} {hizo algo sorprendente} con {herramienta/método concreto}.",
+      "example": "Vi a un dueño de gimnasio armar todo su onboarding en una llamada de 40 minutos.",
+      "best_for": "Prueba prestada, contada en primera persona. Menos ego que tu propio resultado, y muchas veces más creíble.",
+      "trap": "Un resultado que no podés respaldar. Si no lo viste, es un rumor, y un rumor con un número es peor.",
+      "match": "\\b(?:mi (?:cliente|clienta|amig[oa]|viej[oa]|pap[aá]|mam[aá]|herman[oa]|soci[oa]|pasante|primo|prima)|un (?:tipo|amigo|founder|fundador|cliente|pibe|chico|estudiante|desconocido|due[ñn]o)|una (?:amiga|fundadora|clienta|estudiante|due[ñn]a)|vi (?:a|c[oó]mo))\\b[^.!?\\n]{0,60}\\b(?:arm[oó]|armar|hizo|hacer|cre[oó]|reemplaz[oó]|creci[oó]|lleg[oó]|renunci[oó]|vendi[oó]|levant[oó]|lanz[oó]|automatiz[oó]|factur[oó]|gan[oó]|duplic[oó])\\b"
+    },
+    {
+      "id": 11,
+      "name": "La predicción",
+      "template": "En {plazo}, {cambio concreto} va a {pasar}. {Por qué, en una línea}.",
+      "example": "En 18 meses, ninguna agencia va a vender un abono mensual sin un archivo de skills.",
+      "best_for": "Posicionarse. Una apuesta con fecha y que puede fallar, que la gente vuelve a citar.",
+      "trap": "Una predicción que no puede fallar. \"La IA lo va a cambiar todo\" no es una predicción.",
+      "match": "\\b(?:en (?:\\d+|unos|pocos|dos|tres|cinco|diez|dieciocho) (?:meses|años)|para (?:20\\d\\d|el año que viene|fin de año)|antes de (?:20\\d\\d|fin de año)|dentro de (?:un|una|\\d+) (?:años?|mes(?:es)?))\\b[^.!?\\n]{0,80}(?:\\b(?:va a|van a)\\b|\\w+(?:ar|er|ir)(?:á|án)\\b)|\\bacordate de lo que te digo\\b|\\bmarquen mis palabras\\b|\\blo digo ahora\\b"
+    },
+    {
+      "id": 12,
+      "name": "La orden",
+      "template": "{Verbo en imperativo} {algo concreto}. {La razón, en una línea}.",
+      "example": "Borrá la primera línea de cada post que escribís. Casi siempre es carraspeo.",
+      "best_for": "Enseñar en un solo movimiento. Corto, útil, para guardar.",
+      "trap": "Una orden sin razón. \"Dejá de usar ChatGPT.\" ¿Por qué? La razón es el post.",
+      "match": "^\\s*¡?(?:dej[aá] de|deja de|dejen de|no (?:hagas|uses|publiques|mandes|cobres)|nunca|borr[aá]|borra|rob[aá]|roba|copi[aá]|copia|guard[aá]|guarda|le[eé]|lee|us[aá]|usa|prob[aá]|prueba|mand[aá]|manda|escrib[ií]|escribe|arm[aá]|arma|empez[aá]|empieza|silenci[aá]|par[aá] de|cobr[aá]|cobra|sub[ií]|sube)\\b"
+    },
+    {
+      "id": 13,
+      "name": "La estadística",
+      "template": "{Cifra sorprendente} de {grupo} {hace algo}. {Qué significa}.",
+      "example": "3 de mis últimos 40 posts me trajeron el 71% de los seguidores nuevos.",
+      "best_for": "Autoridad, cuando el número es real y podés mostrar de dónde salió. Tus propias estadísticas cuentan.",
+      "trap": "Un dato inventado o sin fuente. En X alguien te pide la fuente en menos de un minuto.",
+      "match": "^\\s*(?:el |la )?\\d+(?:[.,]\\d+)?\\s?%|\\b\\d+(?:[.,]\\d+)?\\s?(?:%|por ciento) de\\b|\\b\\d+ de (?:cada |mis |los |las |sus |tus )?(?:\\w+ )?\\d+\\b|\\b\\d+(?:[.,]\\d+)?\\s?(?:x|veces) (?:m[aá]s|menos|lo que)\\b"
+    },
+    {
+      "id": 14,
+      "name": "El nombre nuevo",
+      "template": "Hay un nuevo tipo de {actividad} que yo llamo \"{nombre}\". {Qué es}.",
+      "example": "Hay un trabajo nuevo que yo llamo \"domador de agentes\". Ya es la mitad de mi semana.",
+      "best_for": "Nombrar algo que la gente ya hace y no tiene palabra. Cuando pega, el nombre viaja más que el post.",
+      "trap": "Nombrar algo que ya tiene nombre. Te van a responder con el link de Wikipedia.",
+      "match": "\\b(?:yo )?(?:le |lo |la |les )(?:llamo|llam[eé]|vengo llamando|bautic[eé])\\b|\\blo que yo llamo\\b|\\bque (?:yo )?llamo\\b|\\bun nuevo tipo de\\b|\\buna nueva forma de\\b|\\bhay un nombre para\\b"
+    },
+    {
+      "id": 15,
+      "name": "El lanzamiento",
+      "template": "{Algo nuevo} acaba de {salir/lanzarse}. {El único detalle que importa}.",
+      "example": "Claude Code acaba de sacar plugins. Instalás el flujo de todo un equipo con un comando.",
+      "best_for": "Noticias, primero. En X llegar temprano vale más que ser exhaustivo.",
+      "trap": "Sirena y \"ÚLTIMO MOMENTO\" en algo que no lo es. Funciona una vez.",
+      "match": "^\\s*(?:🚨|[uú]ltimo momento|urgente|gran noticia|nuevo en\\b|presentamos\\b|anunciamos\\b|les presento\\b)|\\bacaba(?:n)? de (?:lanzar|sacar|salir|publicar|anunciar|liberar)\\b|\\bya est[aá] disponible\\b"
+    },
+    {
+      "id": 16,
+      "name": "La promesa de hilo",
+      "template": "{Pasé N horas haciendo algo concreto}. Esto es todo lo que aprendí:",
+      "example": "Leí todos los posts de mi nicho que pasaron el millón de vistas el mes pasado. Esto es lo que tenían en común:",
+      "best_for": "Hilos. El primer post vende todo el hilo, así que tiene que prometer algo concreto.",
+      "trap": "\"Un hilo 🧵\" como gancho. Es una etiqueta. Lo prometido es el gancho.",
+      "match": "🧵|\\b(?:esto es|ac[aá] va|aqu[ií] va|te cuento|les cuento) (?:todo )?lo que (?:aprend[ií]|aprendimos|encontr[eé]|descubr[ií]|not[eé]|ten[ií]an en com[uú]n)\\b|\\b(?:un|este|mini) hilo\\b|:\\s*$"
+    },
+    {
+      "id": 17,
+      "name": "El arrepentimiento",
+      "template": "Perdí {tiempo} en {cosa}. {Qué harías en cambio}.",
+      "example": "Perdí dos años publicando para nadie. Respondiendo habría llegado en seis meses.",
+      "best_for": "Ahorrarle al lector el mismo error. Humildad sin etiqueta de precio.",
+      "trap": "Un arrepentimiento que en realidad es alarde. \"Ojalá hubiera levantado menos plata\" se lee exactamente como suena.",
+      "match": "\\b(?:mi )?(?:mayor|peor|m[aá]s caro|[uú]nico) (?:error|arrepentimiento)\\b|\\b(?:perd[ií]|desperdici[eé]|tir[eé]) (?:\\d+|dos|tres|un|una|cuatro|seis) (?:años?|mes(?:es)?|semanas?)\\b|\\bme arrepiento\\b|\\bojal[aá] (?:hubiera|lo hubiera|me hubiera)\\b|\\bla cagu[eé]\\b|\\bla pifi[eé]\\b|\\bme equivoqu[eé]\\b"
+    },
+    {
+      "id": 18,
+      "name": "La comparación",
+      "template": "{Opción cara/conocida} vs {opción barata/nueva}. {Cuál ganó y por cuánto}.",
+      "example": "Una agencia de USD 1.500 por mes vs un fin de semana con Claude. Ganó el fin de semana.",
+      "best_for": "Decisiones que tu público está tomando de verdad.",
+      "trap": "Una pelea arreglada. Si el perdedor es un hombre de paja, nadie aprende nada y te responden sus fans.",
+      "match": "\\bvs\\.?\\b|\\bversus\\b|\\ben vez de\\b|\\ben lugar de\\b|\\bmejor que\\b|\\breemplac[eé]\\b|\\breemplazamos\\b"
+    },
+    {
+      "id": 19,
+      "name": "El reporte de campo",
+      "template": "Estuve {pasando tiempo con un grupo concreto} últimamente. {Lo que notaste y otros no}.",
+      "example": "Estuve escuchando llamadas de venta de agencias últimamente. Nadie pregunta el precio ya.",
+      "best_for": "Observación desde adentro. El post es lo que notaste.",
+      "trap": "Un reporte sin observación. \"Hablé con founders, cambió la onda\" no dice nada.",
+      "match": "\\b(?:vengo|estuve|estoy|he estado|ando)\\s+\\w+(?:ando|iendo)\\b|\\b(?:[uú]ltimamente|estos d[ií]as|esta semana|este mes|hace poco)\\b"
+    },
+    {
+      "id": 20,
+      "name": "La pregunta abierta",
+      "template": "¿{Pregunta concreta que solo tu público puede responder}?",
+      "example": "¿Cuál es la herramienta de USD 20 por mes que cancelarías último?",
+      "best_for": "Respuestas. Una buena pregunta es la forma más barata de llenar un hilo, y las respuestas son la investigación de la semana que viene.",
+      "trap": "Una pregunta que cualquiera podría hacer. \"¿Qué opinan?\" y \"¿Qué piensan de la IA?\" no consiguen nada.",
+      "match": "^\\s*¿?[^.!\\n]{8,140}\\?\\s*$"
+    },
+    {
+      "id": 21,
+      "name": "La frase sola",
+      "template": "{Una frase corta y cierta. Sin preparación.}",
+      "example": "Tus primeros 1.000 seguidores salen de las respuestas, no de los posts.",
+      "best_for": "Posts completos en una línea, hechos para ser citados. La forma de la mayoría de los posts más grandes de la plataforma.",
+      "trap": "Una frase que es solo onda. Tiene que ser una afirmación con la que alguien pueda no estar de acuerdo.",
+      "match": "^\\s*(?:\\S+\\s+){2,13}\\S+\\s*$"
+    }
+  ]
+}
